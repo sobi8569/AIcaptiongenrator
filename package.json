@@ -1,0 +1,37 @@
+{
+  "name": "ai-caption-generator",
+  "version": "1.0.0",
+  "description": "AI-powered social media caption generator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sobi8569/AIcaptiongenrator.git"
+  },
+  "keywords": [
+    "ai",
+    "caption",
+    "generator",
+    "social-media",
+    "tiktok",
+    "instagram"
+  ],
+  "author": "sobi8569",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sobi8569/AIcaptiongenrator/issues"
+  },
+  "homepage": "https://github.com/sobi8569/AIcaptiongenrator#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Caption Generator - Go Viral Faster</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Caption<span>AI</span></div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#generator">Generate</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+        </div>
+    </nav>
+
+    <div class="background-numbers" id="bgNumbers"></div>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>No Time Limit Caption Generator<br>Go Viral Faster</h1>
+            <p>Conquer the social media market with AI-powered captions</p>
+            <div class="platform-badges">
+                <span class="platform"><i class="fab fa-instagram"></i> Instagram</span>
+                <span class="platform"><i class="fab fa-tiktok"></i> TikTok</span>
+                <span class="platform"><i class="fab fa-youtube"></i> YouTube</span>
+                <span class="platform"><i class="fab fa-twitter"></i> Twitter</span>
+            </div>
+        </section>
+
+        <section id="generator" class="caption-generator">
+            <div class="generator-container">
+                <div class="input-section">
+                    <h2>Generate Your Caption</h2>
+                    <div class="platform-select">
+                        <label>Select Platform:</label>
+                        <div class="platform-options">
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="instagram">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="tiktok">
+                                <i class="fab fa-tiktok"></i> TikTok
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="youtube">
+                                <i class="fab fa-youtube"></i> YouTube
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="twitter">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="content-input">
+                        <label>Content Description or Keywords:</label>
+                        <textarea placeholder="Describe your content or enter keywords..." rows="4"></textarea>
+                    </div>
+
+                    <div class="style-options">
+                        <label>Caption Style:</label>
+                        <select id="captionStyle">
+                            <option value="professional">Professional</option>
+                            <option value="casual">Casual</option>
+                            <option value="funny">Funny</option>
+                            <option value="promotional">Promotional</option>
+                        </select>
+                    </div>
+
+                    <button id="generateBtn" class="generate-btn">
+                        <i class="fas fa-magic"></i> Generate Captions
+                    </button>
+                </div>
+
+                <div id="captionResults" class="caption-results">
+                    <!-- Results will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Why Choose Our AI Caption Generator?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>No Time Limit</h3>
+                    <p>Generate captions anytime, anywhere</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI-Powered</h3>
+                    <p>Smart captions that engage your audience</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Market Analysis</h3>
+                    <p>Optimized for maximum engagement</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>Custom Styles</h3>
+                    <p>Personalized to your brand voice</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
