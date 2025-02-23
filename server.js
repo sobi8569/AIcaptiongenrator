@@ -3,20 +3,36 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const helmet = require('helmet');
 
 // Load environment variables
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Hugging Face API configuration
 const HF_API_KEY = process.env.HUGGING_FACE_API_KEY;
 const HF_API_URL = "https://api-inference.huggingface.co/models/";
 const MODEL_NAME = "gpt2"; // Using GPT2 model which is publicly accessible
 
+// Security middleware
+app.use(helmet());
+app.use(cors({
+    origin: NODE_ENV === 'production' 
+        ? process.env.ALLOWED_ORIGINS?.split(',') || ['https://your-domain.com']
+        : '*',
+    methods: ['GET', 'POST'],
+    credentials: true
+}));
+
+// Trust proxy if behind reverse proxy
+if (NODE_ENV === 'production') {
+    app.set('trust proxy', 1);
+}
+
 // Middleware
-app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
@@ -165,6 +181,6 @@ app.get('/api/platforms', (req, res) => {
 });
 
 // Start server
-app.listen(port, '127.0.0.1', () => {
-    console.log(`Server running at http://127.0.0.1:${port}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server running at http://localhost:${port}`);
 });
